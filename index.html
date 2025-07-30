@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday Humaira</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fraunces', serif;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+    #balloon-container {
+      margin-top: 80px;
+    }
+    .balloon {
+      width: 80px;
+      height: 100px;
+      border-radius: 50%;
+      display: inline-block;
+      line-height: 100px;
+      font-weight: bold;
+      font-size: 24px;
+      margin: 10px;
+      cursor: pointer;
+      color: white;
+    }
+    .hidden {
+      display: none;
+    }
+    #message {
+      display: none;
+      margin: 60px 10% 20px;
+    }
+    #message h2 {
+      color: #2D6CDF;
+    }
+    #message p {
+      color: #2D6CDF;
+      font-size: 18px;
+      line-height: 1.8;
+      text-align: left;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday Humaira</h1>
+  <div id="balloon-container"></div>
+
+  <div id="message">
+    <h2>Untuk kamu yang ulang tahun ke-19</h2>
+    <p>
+Nggak kerasa ya, kamu udah 19. Perasaan minggu lalu baru lahir wkwkwkwk.
+Sekarang udah 19 aja. Gila cepet banget waktu jalan.
+Anyway, happy birthday babyy. I wish you all the best in this world. Beneran.
+Di umur ini, aku cuma pengen kamu bahagia, tenang, dan ngerasa dicintai—especially by me.
+
+19 itu bukan umur yang kecil, tapi juga belum terlalu dewasa. Banyak yang bakal berubah, banyak hal baru yang datang, tapi aku harap kamu tetap jadi kamu yang aku kenal—yang hangat, yang sabar, yang jujur, yang bisa bikin tenang cuma dengan satu pelukan.
+I know life gets heavy sometimes, tapi kamu nggak harus hadapin semuanya sendirian. You never have to.
+
+Thank you for being so kind, so patient, and so real.
+Kamu itu rumah buat aku, even when everything else feels loud and messy.
+Kalau aku lagi males cerita, atau bahkan diem aja, kamu tetep ada. Nggak nuntut, nggak maksa. That means a lot to me, more than you probably realize.
+
+I’m proud of the way you carry yourself. Proud of how you think, how you care about people, and how you stay soft in a world that’s sometimes anything but.
+You’re strong, but you don’t act like you have to prove it—and I admire that.
+
+Semoga tahun ini kamu bisa ketawa lebih sering, nangis lebih sedikit, dan tidur lebih nyenyak.
+Semoga kamu bisa pelan-pelan ngelepas hal-hal yang bikin kamu capek.
+Dan semoga kamu selalu punya tempat buat pulang—baik itu rumah, temen, atau aku.
+
+I’ll always be here for you. Dari deket, dari jauh, dari mana pun kamu butuh aku.
+Aku nggak selalu pinter ngomong atau ngungkapin semua perasaan, tapi aku selalu ada.
+
+I love you. More than words.
+More than Manchester United (and you know how serious that is).
+More than kemarin, lebih dari hari ini, dan belum ada batas buat besok.
+
+Happy birthday, baby. You deserve the world.
+
+— Dito
+Fans Manchester United. Pacar kamu. Orang yang paling sayang kamu.
+    </p>
+  </div>
+
+  <script>
+    const colors = ['#FF6B6B', '#6BCB77', '#4D96FF', '#FFD93D', '#845EC2', '#FF9671', '#2C73D2', '#00C9A7', '#C34A36', '#FFC75F', '#F9F871', '#F67280', '#6A0572', '#17B978', '#FC5185', '#3EC1D3', '#F8E9A1', '#FF9A8B', '#A1DE93'];
+    let currentBalloon = 0;
+
+    function showNextBalloon() {
+      if (currentBalloon < 19) {
+        const balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.style.backgroundColor = colors[currentBalloon % colors.length];
+        balloon.textContent = currentBalloon + 1;
+        balloon.onclick = () => {
+          balloon.remove();
+          currentBalloon++;
+          if (currentBalloon === 19) {
+            document.getElementById('message').style.display = 'block';
+          } else {
+            showNextBalloon();
+          }
+        };
+        document.getElementById('balloon-container').appendChild(balloon);
+      }
+    }
+
+    window.onload = () => {
+      showNextBalloon();
+    };
+  </script>
+</body>
+</html>
